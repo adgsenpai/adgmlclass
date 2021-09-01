@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 # Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics
 import seaborn as sns
-# Preprocessing allows us to standarsize our data
+# Preprocessing allows us to standardize our data
 from sklearn import preprocessing
 # Allows us to split our data into training and testing data
 from sklearn.model_selection import train_test_split
