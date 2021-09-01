@@ -15,4 +15,5 @@ setup(
     ],
     install_requires=["click", "pytz","pandas","numpy","matplotlib","seaborn","scikit-learn"],
     entry_points={"console_scripts": ["app = src.app:main"]},
+    
 )
