@@ -13,5 +13,6 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    install_requires=["click", "pytz","pandas","numpy","matplotlib","seaborn","scikit-learn"],    
+    license='MIT', 
+    install_requires=["click", "pytz","pandas","numpy","matplotlib","seaborn","scikit-learn"]
 )
