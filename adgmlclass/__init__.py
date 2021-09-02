@@ -129,7 +129,7 @@ class adgmodel:
         except Exception as e:
             print('Error : ADGMLCLASS \n', e)
 
-        def __knn(self, X_test, Y_test, X_train, Y_train, Parameters):
+    def __knn(self, X_test, Y_test, X_train, Y_train, Parameters):
             if Parameters == None:
                 parameters = Parameters
                 pass
@@ -177,8 +177,8 @@ class adgmodel:
     def FindBestModel(self, X_test, Y_test, X_train, Y_train):
         print(
             'Finding best model please wait using the default ADG Optimized ML Formula...')
-        algorithms = {'KNN': self.__knn(X_test, Y_test, X_train, Y_train), 'Tree': self.__tree(X_test, Y_test, X_train, Y_train),
-                      'LogisticRegression': self.__tree( X_test, Y_test, X_train, Y_train), 'SVM': self.__svmcv(X_test, Y_test, X_train, Y_train)}
+        algorithms = {'KNN': self.__knn(X_test, Y_test, X_train, Y_train,''), 'Tree': self.__tree(X_test, Y_test, X_train, Y_train,''),
+                      'LogisticRegression': self.__tree( X_test, Y_test, X_train, Y_train,''), 'SVM': self.__svmcv(X_test, Y_test, X_train, Y_train,'')}
         bestalgorithm = max(algorithms, key=algorithms.get)
         print('Best Algorithm is', bestalgorithm,
               'with a score of', algorithms[bestalgorithm])
