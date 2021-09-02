@@ -30,6 +30,7 @@ from sklearn.metrics import confusion_matrix
 class adgmodel:   
     def plot_confusion_matrix(self, y_test, y_pred, title, truelbl, falselbl):
         try:
+            print("")
             ticklabels = []
             ticklabels.append(truelbl)
             ticklabels.append(falselbl)
