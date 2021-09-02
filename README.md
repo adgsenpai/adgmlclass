@@ -86,3 +86,9 @@ ml.FindBestModel(X_test, Y_test, X_train, Y_train)
 
 ##### Copyright ADGSTUDIOS 2021
 
+------------------------------
+| Date        | Changes      |
+|-------------|--------------|
+| 2021/09/01  | First Commit |
+| 2021/09/01  | Github Workflow + Documentation| 
+
