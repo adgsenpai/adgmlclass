@@ -1,17 +1,11 @@
 # Our modules
 
-# Pandas is a software library written for the Python programming language for data manipulation and analysis.
-import pandas as pd
 # NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays
 import numpy as np
 # Matplotlib is a plotting library for python and pyplot gives us a MatLab like plotting framework. We will use this in our plotter function to plot data.
 import matplotlib.pyplot as plt
 # Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics
 import seaborn as sns
-# Preprocessing allows us to standarsize our data
-from sklearn import preprocessing
-# Allows us to split our data into training and testing data
-from sklearn.model_selection import train_test_split
 # Allows us to test parameters of classification algorithms and find the best one
 from sklearn.model_selection import GridSearchCV
 # Logistic Regression classification algorithm
@@ -46,7 +40,7 @@ class adgmodel:
             print('Error : ADGMLCLASS \n', e)
 
     def __logregcv(self, X_test, Y_test, X_train, Y_train, Parameters):
-        if Parameters == None:
+        if len(Parameters) > 0:
             parameters = Parameters
             pass
         else:
@@ -71,9 +65,8 @@ class adgmodel:
             print('Error : ADGMLCLASS \n', e)
 
     def __svmcv(self, X_test, Y_test, X_train, Y_train, Parameters):
-        if Parameters == None:
+        if Parameters is not  None:
             parameters = Parameters
-            pass
         else:
 
             parameters = {'kernel': ('linear', 'rbf', 'poly', 'rbf', 'sigmoid'),
@@ -99,11 +92,9 @@ class adgmodel:
             print('Error : ADGMLCLASS \n', e)
 
     def __tree(self, X_test, Y_test, X_train, Y_train, Parameters):
-        if Parameters == None:
+        if len(Parameters) > 0:
             parameters = Parameters
-            pass
         else:
-
             parameters = {'criterion': ['gini', 'entropy'],
                           'splitter': ['best', 'random'],
                           'max_depth': [2*n for n in range(1, 10)],
@@ -113,7 +104,6 @@ class adgmodel:
 
             print("using parameters", parameters,
                   "Support Vector Machine Algorithm")
-
         try:
             tree = DecisionTreeClassifier()
             gscv = GridSearchCV(tree, parameters, scoring='accuracy', cv=10)
@@ -131,7 +121,7 @@ class adgmodel:
             print('Error : ADGMLCLASS \n', e)
 
     def __knn(self, X_test, Y_test, X_train, Y_train, Parameters):
-            if Parameters == None:
+            if len(Parameters) > 0:
                 parameters = Parameters
                 pass
             else:
