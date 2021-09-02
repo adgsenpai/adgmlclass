@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 # Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics
 import seaborn as sns
-# Preprocessing allows us to standardize our data
+# Preprocessing allows us to standarsize our data
 from sklearn import preprocessing
 # Allows us to split our data into training and testing data
 from sklearn.model_selection import train_test_split
@@ -27,8 +27,7 @@ from sklearn.metrics import confusion_matrix
 
 
 # ADGSTUDIOS 2021
-class adgmlclass:
-
+class adgmodel:   
     def plot_confusion_matrix(self, y_test, y_pred, title, truelbl, falselbl):
         try:
             ticklabels = []
@@ -130,7 +129,7 @@ class adgmlclass:
         except Exception as e:
             print('Error : ADGMLCLASS \n', e)
 
-        def __knn(self, X_test, Y_test, X_train, Y_train, Parameters):
+    def __knn(self, X_test, Y_test, X_train, Y_train, Parameters):
             if Parameters == None:
                 parameters = Parameters
                 pass
@@ -159,14 +158,14 @@ class adgmlclass:
     def Train(self, Model, X_test, Y_test, X_train, Y_train, Parameters):
         try:
             if Model == 'svm':
-                self.__svmcv(self, X_test, Y_test,
+                self.__svmcv(X_test, Y_test,
                              X_train, Y_train, Parameters)
             if Model == 'tree':
-                self.__tree(self, X_test, Y_test, X_train, Y_train, Parameters)
+                self.__tree(X_test, Y_test, X_train, Y_train, Parameters)
             if Model == 'knn':
-                self.__knn(self, X_test, Y_test, X_train, Y_train, Parameters)
+                self.__knn(X_test, Y_test, X_train, Y_train, Parameters)
             if Model == 'LogisticRegression':
-                self.__logregcv(self, X_test, Y_test,
+                self.__logregcv(X_test, Y_test,
                                 X_train, Y_train, Parameters)
 
         except Exception as e:
@@ -178,8 +177,8 @@ class adgmlclass:
     def FindBestModel(self, X_test, Y_test, X_train, Y_train):
         print(
             'Finding best model please wait using the default ADG Optimized ML Formula...')
-        algorithms = {'KNN': self.__knn(self, X_test, Y_test, X_train, Y_train), 'Tree': self.__tree(self, X_test, Y_test, X_train, Y_train),
-                      'LogisticRegression': self.__tree(self, X_test, Y_test, X_train, Y_train), 'SVM': self.__svmcv(self, X_test, Y_test, X_train, Y_train)}
+        algorithms = {'KNN': self.__knn(X_test, Y_test, X_train, Y_train,''), 'Tree': self.__tree(X_test, Y_test, X_train, Y_train,''),
+                      'LogisticRegression': self.__tree( X_test, Y_test, X_train, Y_train,''), 'SVM': self.__svmcv(X_test, Y_test, X_train, Y_train,'')}
         bestalgorithm = max(algorithms, key=algorithms.get)
         print('Best Algorithm is', bestalgorithm,
               'with a score of', algorithms[bestalgorithm])
