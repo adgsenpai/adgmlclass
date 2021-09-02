@@ -90,5 +90,5 @@ ml.FindBestModel(X_test, Y_test, X_train, Y_train)
 | Date        | Changes      |
 |-------------|--------------|
 | 2021/09/01  | First Commit |
-| 2021/09/01  | Github Workflow + Documentation| 
+| 2021/09/02  | Github Workflow + Documentation| 
 
