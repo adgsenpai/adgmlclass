@@ -27,8 +27,7 @@ from sklearn.metrics import confusion_matrix
 
 
 # ADGSTUDIOS 2021
-class adgmlclass:
-
+class adgmodel:   
     def plot_confusion_matrix(self, y_test, y_pred, title, truelbl, falselbl):
         try:
             ticklabels = []
