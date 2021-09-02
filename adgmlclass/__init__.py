@@ -158,14 +158,14 @@ class adgmodel:
     def Train(self, Model, X_test, Y_test, X_train, Y_train, Parameters):
         try:
             if Model == 'svm':
-                self.__svmcv(self, X_test, Y_test,
+                self.__svmcv(X_test, Y_test,
                              X_train, Y_train, Parameters)
             if Model == 'tree':
-                self.__tree(self, X_test, Y_test, X_train, Y_train, Parameters)
+                self.__tree(X_test, Y_test, X_train, Y_train, Parameters)
             if Model == 'knn':
-                self.__knn(self, X_test, Y_test, X_train, Y_train, Parameters)
+                self.__knn(X_test, Y_test, X_train, Y_train, Parameters)
             if Model == 'LogisticRegression':
-                self.__logregcv(self, X_test, Y_test,
+                self.__logregcv(X_test, Y_test,
                                 X_train, Y_train, Parameters)
 
         except Exception as e:
@@ -177,8 +177,8 @@ class adgmodel:
     def FindBestModel(self, X_test, Y_test, X_train, Y_train):
         print(
             'Finding best model please wait using the default ADG Optimized ML Formula...')
-        algorithms = {'KNN': self.__knn(self, X_test, Y_test, X_train, Y_train), 'Tree': self.__tree(self, X_test, Y_test, X_train, Y_train),
-                      'LogisticRegression': self.__tree(self, X_test, Y_test, X_train, Y_train), 'SVM': self.__svmcv(self, X_test, Y_test, X_train, Y_train)}
+        algorithms = {'KNN': self.__knn(X_test, Y_test, X_train, Y_train), 'Tree': self.__tree(X_test, Y_test, X_train, Y_train),
+                      'LogisticRegression': self.__tree( X_test, Y_test, X_train, Y_train), 'SVM': self.__svmcv(X_test, Y_test, X_train, Y_train)}
         bestalgorithm = max(algorithms, key=algorithms.get)
         print('Best Algorithm is', bestalgorithm,
               'with a score of', algorithms[bestalgorithm])
