@@ -1,6 +1,10 @@
 <h1> ADG ML CLASS </h1>
 
-This is a class used to find the best parameters to train your machine learning module, also useful for plotting a cool confusion matrix.
+##### This is a class used to find the best parameters to train your machine learning module, also useful for plotting a cool confusion matrix.
+
+<a href="https://colab.research.google.com/github/ADGVLOGS/adgmlclass/blob/main/ADGMLCLASSDemo.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Interactive Demo"/></a>
+
+
 
 #### Downloading Module
 
