@@ -10,7 +10,21 @@ pip install adgmlclass
 #### Usage 
 
 ##### Importing module
+````
+import adgmlclass
+ml = adgmlclass.adgmodel()
+````
 
+##### Functions 
+````
+FindBestModel - finds best model to use
 ````
 
 ````
+plot_confusion_matrix - returns a matlab confusion matrix
+````
+
+````
+Train - Trains a model and returns accuracy matrics with Confusion Matrix.
+````
+
