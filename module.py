@@ -65,7 +65,7 @@ class adgmodel:
             print('Error : ADGMLCLASS \n', e)
 
     def __svmcv(self, X_test, Y_test, X_train, Y_train, Parameters):
-        if Parameters is not  None:
+        if len(Parameters) > 0:
             parameters = Parameters
         else:
 
